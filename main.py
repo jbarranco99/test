@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def index():
+    req_data = request.get_json()
     pickedCats = req_data['pickedCats']
     return jsonify("pickedCats":pickedCats)
 
